@@ -1,0 +1,59 @@
+extends ../layout
+
+block content
+  section
+    .container
+      h3
+        span.glyphicon.glyphicon-tree-deciduous
+        | 游戏录入
+  include ../includes/notification
+  section
+    .container
+      .row
+        form.form-horizontal(method="post", action="/admin/game/create", enctype="multipart/form-data")
+          if game._id
+            input(type="hidden", name="gameId", value=game._id)
+          .form-group
+            label.col-sm-2.control-label 分类选择
+            each category in categories
+              label.radio-inline
+                if game.category
+                  input(type="radio", name="gamecategory", checked=category._id.toString()==game.category.toString(), value=category._id)
+                  | #{category.name}
+                else
+                  input(type="radio", name="gamecategory", value=category._id)
+                  | #{category.name}
+          .form-group
+            label.col-sm-2.control-label(for="gamename") 游戏名称
+            .col-sm-10
+              input#gamename.form-control(type="text", name="gamename")
+          .form-group
+            label.col-sm-2.control-label(for="gameposter") 海报地址
+            .col-sm-10
+              input#gameposter.form-control(type="text", name="gameposter")
+          .form-group
+            label.col-sm-2.control-label(for="uploadposter") 海报上传
+            .col-sm-10
+              input#uploadposter.form-control(type="file", name="uploadposter")
+          //.form-group
+          //  label.col-sm-2.control-label(for="gameflash") 宣传动画
+          //  .col-sm-10
+          //    input#gameflash.form-control(type="text", name="gameflash")
+          .form-group
+            label.col-sm-2.control-label(for="gameyear") 上线时间
+            .col-sm-10
+              input#gameyear.form-control(type="text", name="gameyear")
+          .form-group
+            label.col-sm-2.control-label(for="gameurl") 官方网站
+            .col-sm-10
+              input#gameurl.form-control(type="text", name="gameurl")
+          .form-group
+            label.col-sm-2.control-label(for="gamesummary") 游戏简介
+            .col-sm-10
+              textarea#gamesummary.form-control(name="gamesummary", rows="5")
+          .form-group
+            .col-sm-offset-2.col-sm-4
+              button.btn.btn-primary(type="submit") 录入
+            .col-sm-6
+              a.btn.btn-warning(href="/admin/games") 返回
+            

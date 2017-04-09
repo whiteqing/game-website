@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+  section.adminlist
+    .container
+      .row
+        .categories-content-box
+          table.table.table-hover.table-bordered
+            thead
+              tr
+                th 分类名字
+                th 创建时间
+                th 修改
+                th 删除
+            tbody
+              each category in categories
+                tr(class="category-id-" + category._id)
+                  td #{category.name}
+                  td #{moment(category.meta.createAt).format('YYYY-MM-DD, HH:mm:ss')}
+                  td: a(href="/admin/categoryupdate/" + category._id) 修改
+                  td
+                    button.btn.btn-danger.del(type="button", data-id=category._id) 删除
+        ul.pagination
+          li
+            - if (currentPage == 1) {
+                span &laquo;
+            - }else{
+                a(href='/admin/categorylist?p=' + (currentPage-2)) &laquo;
+            - }           
+          - for (var i = 0; i < totalPage; i++) {
+            - if (currentPage == (i + 1)) {
+                li.active
+                  span #{currentPage}
+            - }else {
+                li
+                  a(href='/admin/categorylist?p=' + i) #{i + 1}
+            - }
+          - }
+          li
+            - if (currentPage == totalPage) {
+                span &raquo;
+            - }else{
+                a(href='/admin/categorylist?p=' + (currentPage)) &raquo;
+            - } 
+        .goback-padding-bottom  
+          a.btn.btn-warning(href="/admin/games") 返回
+          a.btn.btn-warning(href="/admin/category/create") 录入
+  include ../includes/footer
+  script(src="../js/admincategorylist.js")

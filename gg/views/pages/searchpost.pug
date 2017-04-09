@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  ol.breadcrumb
+    li
+      a(href="/posts") 全部
+    li.active #{keyword}
+  .container
+    .row
+      .panel.panel-default
+        .panel-heading
+          h3 #{keyword}
+        .posts-content-box
+          each post in posts
+            .panel.panel-default
+              .panel-body
+                span.col-sm-1.label.label-default #{post.pv}
+                a.col-sm-7(href="/posts/" + post._id) #{post.title}
+                .col-sm-2
+                  span.glyphicon.glyphicon-user
+                  a(href="/user/" + post.author._id) #{post.author.nickname}
+                span.col-sm-2 #{moment(post.meta.updateAt).format('YYYY-MM-DD, hh:mm:ss')}
+      ul.pagination
+        - for (var i = 0; i< totalPage; i++) {
+          - if (currentPage == (i + 1)) {
+              li.active
+                span #{currentPage}
+          - }
+          - else {
+              li
+                a(href='/search/posts?' + query + '&p=' + i) #{i + 1}
+          - }
+        - }

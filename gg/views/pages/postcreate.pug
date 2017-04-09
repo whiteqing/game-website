@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  include ../includes/notification
+  section.create-post
+    .container
+      .row
+        .col-md-offset-1.col-md-3
+          span.user-avatar-box
+            img(src="../upload/"+user.avatar, alt="avatar")
+          span.user-nickname-box
+            p #{user.nickname}
+        .col-md-5
+          form(method="post", action="/posts/create", role="form")
+            .form-group
+              label.control-label(for="title") 标题
+              input.form-control#title(type="text", placeholder="请输入标题", name="title")
+            .form-group
+              label.control-label(for="content") 内容
+              textarea.form-control#content(name="content", rows="15", placeholder="请输入内容")
+            .form-group
+              button.btn.btn-success#btn-submit(type="submit") 发布

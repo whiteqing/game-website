@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+  section.game-box
+    .container
+      .row
+        .col-md-3
+          h2
+            span.glyphicon.glyphicon-leaf
+            | 分类录入
+          p &nbsp;
+          p &nbsp;
+          a.btn.btn-default(href="category/create") GO,GO,GO
+        .col-md-3
+          h2
+            span.glyphicon.glyphicon-leaf
+            | 分类列表
+          p &nbsp;
+          p &nbsp;
+          a.btn.btn-default(href="categorylist") GO,GO,GO
+        .col-md-3
+          h2
+            span.glyphicon.glyphicon-leaf
+            | 游戏录入
+          p &nbsp;
+          p &nbsp;
+          a.btn.btn-default(href="game/create") GO,GO,GO
+        .col-md-3
+          h2
+            span.glyphicon.glyphicon-leaf
+            | 游戏列表
+          p &nbsp;
+          p &nbsp;
+          a.btn.btn-default(href="gamelist") GO,GO,GO
+        .col-md-offset-5.games-goback
+          a.btn.btn-primary(href="/admin") 返回
+  include ../includes/footer

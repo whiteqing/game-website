@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  section.user-info
+    .container
+      .row
+        .col-md-offset-2.col-md-3
+          span.user-avatar-box
+            img(src="../upload/"+user.avatar, alt="avatar")
+        .col-md-7
+          .user-info-content
+            .col-md-3
+              p 昵称：
+            .col-md-9
+              p #{user.nickname}
+          .user-info-content
+            .col-md-3
+              p 性别：
+            .col-md-9
+              p=({m:'男', f:'女', x:'保密'})[user.gender]
+          .user-info-content
+            .col-md-3
+              p 年龄：
+            .col-md-9
+              p #{user.age}
+          .user-info-content
+            .col-md-3
+              p 星座：
+            .col-md-9
+              p=({Aries:'白羊座', Taurus:'金牛座', Gemini:'双子座', Cancer:'巨蟹座', Leo: '狮子座', Virgo:'处女座', Libra:'天秤座', Scorpio:'天蝎座', Sagittarius:'人马座', Capricorn: '摩羯座', Aquarius:'水瓶座', Pisces: '双鱼座'})[user.constellation]
+          .user-info-content
+            .col-md-3
+              p 个人简介
+            .col-md-9
+              p #{user.bio}

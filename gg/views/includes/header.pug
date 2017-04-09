@@ -1,0 +1,54 @@
+header
+  nav.navbar.navbar-inverse.navbar-fixed-top(rol="navigation")
+    .container
+      .navbar-header
+        button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href="/") 天下
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        ul.nav.navbar-nav
+          li
+            a(href="/") 主页
+          li.dropdown
+            a.dropdown-toggle(href="#", data-toggle="dropdown") 分类
+              span.caret
+            ul.dropdown-menu(role="menu")
+              li
+                a(href="/games") 全部游戏
+              li
+                a(href="/search/games?category=单机游戏&p=0") 单机游戏
+              li
+                a(href="/search/games?category=网络游戏&p=0") 网络游戏
+              li
+                a(href="/search/games?category=手机游戏&p=0") 手机游戏
+              li
+                a(href="/search/games?category=网页游戏&p=0") 网页游戏
+              li
+                a(href="/search/games?category=小游戏系列&p=0") 小游戏系列
+          li
+            a(href="/posts") 论坛
+          li
+            a(href="/about") 关于
+        ul.nav.navbar-nav.navbar-right
+          if user
+            li
+              a(href="/user/" + user._id) 欢迎你，#{user.nickname}
+            li
+              a(href="/signout") 退出
+            if user.role > 10
+              li
+                a(href='/admin') 管理网站      
+          else
+            li.dropdown
+              a.dropdown-toggle(href="#", data-toggle="dropdown") 用户
+                span.caret
+              ul.dropdown-menu(role="menu")
+                li
+                  a(href="/signup") 注册
+                li.divider
+                li
+                  a(href="/signin") 登录

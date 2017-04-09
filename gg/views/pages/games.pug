@@ -1,0 +1,35 @@
+extends ../layout
+
+block content 
+  section
+    .container
+      .row
+        .panel.panel-default
+          .panel-heading
+            .col-sm-4
+              span.glyphicon.glyphicon-flash
+              | 总有你喜欢的游戏！
+            form(method='GET', action='/search/games')
+              .input-group.col-sm-6
+                input.form-control(type='text', name='q')
+                span.input-group-btn
+                  button.btn.btn-default(type='submit') 搜索
+        each category in categories
+          .panel.panel-default
+            .panel-heading
+              h3
+                a(href='/search/games?category=' + category.name + '&p=0') #{category.name}
+            .panel-body
+              if category.games && category.games.length > 0
+                each game in category.games
+                  .col-md-2
+                    .thumbnail
+                      a(href="/games/" + game._id)
+                        if game.poster.indexOf('http:') > -1
+                          img(src=game.poster, alt=game.name)
+                        else
+                          img(src="/upload/" + game.poster, alt=game.name)
+                      .caption
+                        h4 #{game.name}
+                        p: a.btn.btn-primary(href="/games/" + game._id, role="button") 查看详情
+  include ../includes/footer

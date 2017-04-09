@@ -1,0 +1,103 @@
+extends ../layout
+
+block content
+  section.about
+    .container
+      .row
+        .col-md-3
+          .list-group#about-list
+            a.list-group-item.active(href="#") 关于我们
+            a.list-group-item 团队合作
+            a.list-group-item 企业合作
+            a.list-group-item 游戏纠错
+            a.list-group-item 联系我们
+            a.list-group-item 友情链接
+        .col-md-9#about-content
+          .about-content.about-padding
+            h1 关于我们
+            dl.us-list
+              dt 天下是干嘛的?
+              dd 第一个完整的不能在完整的项目，答辩用的。
+
+              dt 天下在做什么?
+              dd 收录一些我自己喜欢玩的游戏，大家一起讨论讨论吧。
+              dt 天下追求是什么?
+              dd 没有，硬要说你拿去好好过毕业设计吧。
+              dt 天下有移动端吗?
+              dd 没有，基于bootstrap的响应式布局已经让我心力憔悴...
+          .about-content(style="display: none;")
+            .group-hd
+              img(src="img/about-content-group.jpg", alt="about-content-group")
+            .group-bd
+              ol
+                li
+                  .group-text-box.pull-left
+                  img(src="img/about-content-group1.jpg" alt="about-content-group1")
+                li
+                  img.pull-left(src="img/about-content-group2.jpg" alt="about-content-group2")
+                  .group-text-box.pull-left
+                li
+                  .group-text-box.pull-left
+                  img(src="img/about-content-group3.jpg" alt="about-content-group3")
+          .about-content.about-padding(style="display: none;")
+            h1 企业合作
+            p 我就随便这么一加，还企业合作呢..........
+            p P大点项目.........
+            p 别人还以为我插上了梦想的翅膀呢........
+            img(src="img/about-content-others1.jpg" alt="about-content-others1.jpg")
+          .about-content.about-padding(style="display: none;")
+            h1 游戏纠错
+            p 就这点东西你还想给我纠错?
+            p 不接受任何批评，程序无任何bug，肯定是你的环境没配对!!哈哈哈哈！！
+            p 好了就这样吧！
+            p 开玩笑的...有错拜托要指出啊！！
+            img(src="img/about-content-others2.jpg" alt="about-content-others2.jpg")
+          .about-content.about-padding(style="display: none;")
+            h1 联系我们
+            .row.about-contact
+              .col-md-12
+                .col-md-6
+                  h1 企业合作
+                  h2 天下er
+                  p QQ:310XXXXXX<br>手机:187XXXXXXXX<br>E-mail:1114@163.com
+                .col-md-6
+                  h1 文章投稿
+                  h2 天下er
+                  p QQ:310XXXXXX<br>手机:187XXXXXXXX<br>E-mail:111@163.com
+              .col-md-12
+                .col-md-6
+                  h1 人才招募
+                  h2 天下er
+                  p QQ:310XXXXXX<br>手机:187XXXXXXXX<br>E-mail:111@163.com
+                .col-md-6
+                  h1 聊天唠嗑
+                  h2 天下er
+                  p QQ:310XXXXXX<br>手机:187XXXXXXXX<br>E-mail:111@163.com
+              .col-md-12
+                h1 公司地址:
+                p 北京市&nbsp;昌平区&nbsp;xxx
+                p &nbsp;
+          .about-content.about-padding.about-height(style="display: none;")
+            h1 友情链接
+            p 我决定放点干货!!
+            dl
+              dd
+                a(href="http://www.imooc.com/") 慕课网
+              dd
+                a(href="https://regexper.com/#%5Cd") 正则表达式验证
+              dd
+                a(href="http://jsonlint.com/") json验证
+              dd
+                a(href="http://www.bootcss.com/") bootstrap中文网
+              dd
+                a(href="http://www.qdfuns.com/") 前端网
+              dd
+                a(href="https://icomoon.io/app/") CSS字体
+              dd
+                a(href="https://gold.xitu.io/") 掘金
+              dd
+                a(href="https://pugjs.org/api/getting-started.html") Pug
+              dd
+                a(href="www.nodejs.org") Nodejs
+  include ../includes/footer
+  script(src="../js/about.js")

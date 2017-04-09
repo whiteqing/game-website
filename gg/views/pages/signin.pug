@@ -1,0 +1,56 @@
+extends ../layout
+
+block content
+  section
+    .container
+      h3
+        span.glyphicon.glyphicon-tree-deciduous
+        | 用户登录
+  include ../includes/notification
+  section
+    .container
+      form(method="post", action="/signin", role="form")
+        .row
+          .form-group
+            .col-sm-offset-2.col-sm-6
+              label.control-label(for="username") 用户名
+              input.form-control#username(type="text", placeholder="请输入用户名", name="username")
+            .col-sm-4
+          .form-group
+            .col-sm-offset-2.col-sm-6
+              label.control-label(for="password") 密码
+              input.form-control#password(type="password", placeholder="请输入密码", name="password")
+            .col-sm-4
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              label ------------soco-------------
+          .form-group
+            .col-sm-offset-2.col-sm-5
+              button.btn.btn-default#btn-signin(type="submit") 登录
+            .col-sm-5
+              a.btn.btn-default#btn-signup(href="signup") 注册
+  section.section-advertising
+    .container
+      .row
+        .col-md-offset-1.col-md-5
+          img(src="img/advertising-1.jpg", alt="advertising-1")
+          h4 梦幻西游
+          p
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+          p 《梦幻西游》是一款由中国网易公司自行开发并营运的网络游戏。游戏以著名的章回小说《西游记》故事为背景，透过Q版的人物，试图营造出浪漫的网络游戏风格。
+        .col-md-5
+          img(src="img/advertising-2.jpg", alt="advertising-2")
+          h4 侠盗猎车5(GTA5)
+          p
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+          p 《侠盗猎车手5》（Grand Theft Auto V），是由Rockstar Games游戏公司出版发行的一款围绕犯罪为主题的开放式动作冒险游戏。
+        .col-md-1
+  include ../includes/footer

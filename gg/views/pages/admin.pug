@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  section.admin-box
+    .container
+      .row
+        .col-md-4
+          h2
+            span.glyphicon.glyphicon-tasks
+            | 用户管理
+          p &nbsp;
+          p 让我来瞅瞅都有谁！！
+          p &nbsp;
+          a.btn.btn-default(href="admin/userlist") GO,GO,GO
+        .col-md-4
+          h2
+            span.glyphicon.glyphicon-tower
+            | 游戏管理
+          p &nbsp;
+          p 做一个努力的管理员！！
+          p &nbsp;
+          a.btn.btn-default(href="admin/games") GO,GO,GO
+        .col-md-4
+          h2
+            span.glyphicon.glyphicon-send
+            | 帖子管理
+          p &nbsp;
+          p 管理员当得好累！！
+          p &nbsp;
+          a.btn.btn-default(href="admin/postlist") GO,GO,GO
+        .col-md-offset-5.games-goback
+          a.btn.btn-primary(href="/") 返回主页
+  include ../includes/footer

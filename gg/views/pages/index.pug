@@ -1,0 +1,107 @@
+extends ../layout
+
+block content
+  section
+    .carousel.slide#carousel-example-generic(data-ride="carousel")
+      ol.carousel-indicators
+        li.active(data-target="#carousel-example-generic", data-slide-to="0")
+        li(data-target="#carousel-example-generic", data-slide-to="1")
+        li(data-target="#carousel-example-generic", data-slide-to="2")
+        li(data-target="#carousel-example-generic", data-slide-to="3")
+        li(data-target="#carousel-example-generic", data-slide-to="4")
+      .carousel-inner(role="listbox")
+        .item.active
+          img(src="img/index-carousel-1.jpg",alt="carousel-1")
+          .carousel-caption
+            p
+              a.btn.btn-info(href="http://pal5.baiyou100.com/pal/index.html", target="_blank") 相关资讯
+        .item
+          img(src="img/index-carousel-2.jpg",alt="carousel-2")
+          .carousel-caption
+            p
+              a.btn.btn-info(href="http://mxd.sdo.com/web5/index/index.html", target="_blank") 相关资讯
+        .item
+          img(src="img/index-carousel-3.jpg",alt="carousel-3")
+          .carousel-caption
+            p
+              a.btn.btn-info(href="http://lol.qq.com/", target="_blank") 相关资讯
+        .item
+          img(src="img/index-carousel-4.jpg",alt="carousel-4")
+          .carousel-caption
+            p
+              a.btn.btn-info(href="http://wow.blizzard.cn/", target="_blank") 相关资讯
+        .item
+          img(src="img/index-carousel-5.jpg",alt="carousel-5")
+          .carousel-caption
+            p
+              a.btn.btn-info(href="http://ku.gamersky.com/2006/Dead-Rising/", target="_blank")   相关资讯
+      a.left.carousel-control(href="#carousel-example-generic", role="button", data-slide="prev")
+        span.glyphicon.glyphicon-chevron-left
+        span.sr-only 上一页
+      a.right.carousel-control(href="#carousel-example-generic", role="button", data-slide="next")
+        span.glyphicon.glyphicon-chevron-right
+        span.sr-only 下一页
+  section
+    .container#index-panel
+      .row
+        .col-md-4
+          img(src="img/index-panel-1.jpg", alt="panel-1")
+          h3 仙剑奇侠传五
+          p 《仙剑奇侠传五》是由大宇资讯旗下软星科技（北京）有限公司所制作的一款国产单机中文角色扮演电脑游戏。
+          p
+            a.btn.btn-primary(href="http://pal5.baiyou100.com/1701000.asp", target="_blank") 相关资讯
+        .col-md-4
+          img(src="img/index-panel-2.jpg", alt="panel-2")
+          h3 英雄联盟
+          p 《英雄联盟》是由美国拳头游戏(Riot Games)开发、中国大陆地区腾讯游戏代理运营的英雄对战MOBA竞技网游。
+          p
+            a.btn.btn-primary(href="http://lol.qq.com/", target="_blank") 相关资讯
+        .col-md-4
+          img(src="img/index-panel-3.jpg", alt="panel-3")
+          h3 饥荒
+          p 《饥荒》是由Klei Entertainment开发的一款动作冒险类求生游戏。
+          p
+            a.btn.btn-primary(href="http://www.ali213.net/zt/DonotStarve/", target="_blank") 相关资讯
+      hr.divider
+  section
+    .container
+      ul.nav.nav-tabs(role="tablist")
+        li.active(role="presentation")
+          a(href="#recommend-1", role="tab", data-toggle="tab") 今日推荐一
+        li(role="presentation")
+          a(href="#recommend-2", role="tab", data-toggle="tab") 今日推荐二
+        li(role="presentation")
+          a(href="#recommend-3", role="tab", data-toggle="tab") 今日推荐三
+        li(role="presentation")
+          a(href="#recommend-4", role="tab", data-toggle="tab") 今日推荐四
+      .tab-content
+        .tab-pane.active#recommend-1
+          .row.feature
+            .col-md-6
+              h3.feature-heading 阴阳师
+              p.lead 今天小编为大家推荐的是最近火出一片天的手机游戏阴阳师。《阴阳师  》是由中国网易移动游戏公司自主研发的3D日式和风回合制RPG手游。游戏中的和风元素是以《源氏物语》的古日本平安时代为背景设计的。游戏剧情以日本平安时代为背景，讲述了阴阳师安倍晴明于人鬼交织的阴阳两界中，探寻自身记忆的故事。
+            .col-md-6
+              img.feature-image.img-responsive(src="img/tab-content-1.jpg", alt="  tab-content-1")
+        .tab-pane#recommend-2
+          .row.feature
+            .col-md-6
+              img.feature-image.img-responsive(src="img/tab-content-2.jpg", alt="  tab-content-2")
+            .col-md-6
+              h3.feature-heading 龙之谷
+              p.lead 第二款为大家推荐的是曾经也是风靡全球的人气网游龙之谷，虽然它现在已经不被大家熟悉，依然凭借着炫酷的画面吸引着不少网民。《龙之谷手游》是一款原汁原味还原经典端游IP的3D动作冒险手游。该款手游拥有Q萌绚丽的视觉体验，高度还原了端游的世界观、剧情、人设等。故事背景发生在具备奇幻特色的阿特利亚大陆。游戏以九条龙争霸的幻想世界为背景，主要内容为打退九条龙或为了成为另一传说中的龙而进行的冒险。
+        .tab-pane#recommend-3
+          .row.feature
+            .col-md-6
+              h3.feature-heading 王者荣耀
+              p.lead 第三款依然为大家推荐一款火爆手游王者荣耀。游戏是类dota手游，游戏中的玩法以竞技对战为主，玩家之间进行1V1、3V3、5V5等多种方式的PVP对战，还可以参加游戏的冒险模式，进行PVE的闯关模式，在满足条件后可以参加游戏的年度排位赛等。
+            .col-md-6
+              img.feature-image.img-responsive(src="img/tab-content-3.jpg", alt="  tab-content-3")
+        .tab-pane#recommend-4
+          .row.feature
+            .col-md-6
+              img.feature-image.img-responsive(src="img/tab-content-4.jpg", alt="  tab-content-4")
+            .col-md-6
+              h3.feature-heading 我的世界
+              p.lead 最后为大家推荐一款百玩不腻的单机游戏我的世界。《Minecraft》是由MojangAB和4JStudios开发的高自由度的沙盒游戏。本作以让每一个玩家在三维空间中自由地创造和破坏不同种类的方块为主体。玩家在游戏中可以在单人或多人模式中通过摧毁或创造方块以创造精妙绝伦的建筑物和艺术，或者收集物品探索地图以完成游戏的主线。
+  include ../includes/footer
+

@@ -1,0 +1,105 @@
+extends ../layout
+
+block content
+  section
+    .container
+      h3
+        span.glyphicon.glyphicon-tree-deciduous
+        | 用户注册
+  include ../includes/notification
+  section
+    .container
+      form.form-horizontal(method="post", action="/signup", role="form", enctype="multipart/form-data")
+        .form-group
+          label.col-sm-3.control-label(for="username") 用户名
+          .col-sm-6
+            input.form-control#username(type="text", placeholder="请输入6-11位的用户名", name="username")
+          .col-sm-3.glyphicon.glyphicon-asterisk.prompt-info.error
+        .form-group
+          label.col-sm-3.control-label(for="password") 密码
+          .col-sm-6
+            input.form-control#password(type="password", placeholder="请输入6-16位字母数字组合的密码", name="password")
+          .col-sm-3.glyphicon.glyphicon-asterisk.prompt-info.error
+        .form-group
+          label.col-sm-3.control-label(for="confirmPassword") 确认密码
+          .col-sm-6
+            input.form-control#confirmPassword(type="password", placeholder="请确认您输入的密码", name="confirmPassword")
+          .col-sm-3.glyphicon.glyphicon-asterisk.prompt-info.error
+        .form-group
+          label.col-sm-3.control-label(for="nickname") 昵称
+          .col-sm-6
+            input.form-control#nickname(type="text", placeholder="请取一个可爱的昵称吧", name="nickname")
+          .col-sm-3.glyphicon.glyphicon-asterisk.prompt-info.error
+        .form-group
+          label.col-sm-3.control-label(for="gender") 性别
+          .col-sm-6
+            select.form-control#gender(name="gender")
+              option(value="m") 男
+              option(value="f") 女
+              option(value="x") 保密
+          .col-sm-3.glyphicon.glyphicon-asterisk.prompt-info.error
+        .form-group
+          label.col-sm-3.control-label(for="age") 年龄
+          .col-sm-6
+            input.form-control#age(type="number", placeholder="多大啦？", name="age")
+          .col-sm-3.glyphicon.glyphicon-asterisk.prompt-info.error
+        .form-group
+          label.col-sm-3.control-label(for="constellation") 星座
+          .col-sm-6
+            select.form-control#constellation(name="constellation")
+              option(value="Aries") 牡羊座
+              option(value="Taurus") 金牛座
+              option(value="Gemini") 双子座
+              option(value="Cancer") 巨蟹座
+              option(value="Leo") 狮子座
+              option(value="Virgo") 处女座
+              option(value="Libra") 天秤座
+              option(value="Scorpio") 天蝎座
+              option(value="Sagittarius") 人马座
+              option(value="Capricorn") 摩羯座
+              option(value="Aquarius") 水瓶座
+              option(value="Pisces") 双鱼座
+          .col-sm-3.glyphicon.glyphicon-asterisk.prompt-info.error
+        .form-group
+          label.col-sm-3.control-label(for="avatar") 头像
+          .col-sm-6
+            input#avatar(type="file", name="avatar")
+            p.help-block 请选择一个头像
+          .col-sm-3
+        .form-group
+          label.col-sm-3.control-label(for="bio") 个人简介
+          .col-sm-6
+            textarea.col-sm-12.form-control#bio(name="bio", rows="5")
+          .col-sm-3
+        .form-group
+          .col-sm-offset-3.col-sm-5
+            button.btn.btn-primary#btn-submit(type="submit") 提交
+          .col-sm-4
+            button.btn.btn-danger#btn-reset(type="reset") 重置
+  section.section-advertising
+    .container
+      .row
+        .col-md-offset-1.col-md-5
+          img(src="img/advertising-1.jpg", alt="advertising-1")
+          h4 梦幻西游
+          p
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+          p 《梦幻西游》是一款由中国网易公司自行开发并营运的网络游戏。游戏以著名的章回小说《西游记》故事为背景，透过Q版的人物，试图营造出浪漫的网络游戏风格。
+        .col-md-5
+          img(src="img/advertising-2.jpg", alt="advertising-2")
+          h4 侠盗猎车5(GTA5)
+          p
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+          p 《侠盗猎车手5》（Grand Theft Auto V），是由Rockstar Games游戏公司出版发行的一款围绕犯罪为主题的开放式动作冒险游戏。
+        .col-md-1
+  include ../includes/footer
+  script(src="../js/validation.js")
+

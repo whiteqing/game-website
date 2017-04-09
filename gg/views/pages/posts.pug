@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+  section
+    .container
+      .row 
+        .panel.panel-default
+          .panel-heading    
+            h3
+              span.glyphicon.glyphicon-certificate
+              | 欢迎来到唠嗑地儿！
+              a.pull-right(href="/posts/create") 发帖
+              form(method='GET', action='/search/posts')
+                .input-group.col-sm-4
+                  input.form-control(type='text', name='q')
+                  span.input-group-btn
+                    button.btn.btn-default(type='submit') 搜索
+        .posts-content-box
+          each post in posts
+            .panel.panel-default
+              .panel-body
+                span.col-sm-1.label.label-default #{post.pv}
+                a.col-sm-7(href="/posts/" + post._id) #{post.title}
+                .col-sm-2
+                  span.glyphicon.glyphicon-user
+                  a(href="/user/" + post.author._id) #{post.author.nickname}
+                span.col-sm-2 #{moment(post.meta.updateAt).format('YYYY-MM-DD, HH:mm:ss')}
+        ul.pagination
+          li
+            - if (currentPage == 1) {
+                span &laquo;
+            - }else{
+                a(href='/posts?p=' + (currentPage-2)) &laquo;
+            - }           
+          - for (var i = 0; i < totalPage; i++) {
+            - if (currentPage == (i + 1)) {
+                li.active
+                  span #{currentPage}
+            - }else {
+                li
+                  a(href='/posts?p=' + i) #{i + 1}
+            - }
+          - }
+          li
+            - if (currentPage == totalPage) {
+                span &raquo;
+            - }else{
+                a(href='/posts?p=' + (currentPage)) &raquo;
+            - } 
+  include ../includes/footer

@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  .error-box
+    h3 要做一个乖宝宝哦！不能强行进入管理员才能进的地方啦！！
+    p &nbsp;
+    p &nbsp;
+    p#error-info 30秒后自动转入首页！！
+    p &nbsp;
+    p &nbsp;
+    a.btn.btn-default(href='/') 转入首页
+    a.btn.btn-default(href='signin') 转入登录页
+    a.btn.btn-default(href='signup') 转入注册页
+  script(src="../js/error.js")

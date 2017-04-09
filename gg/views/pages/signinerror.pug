@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      .panel.panel-default
+          .error-box
+            h3 宝宝，请先登录吧！！
+            p &nbsp;
+            p &nbsp;
+            p#error-info 30秒后自动转入首页！！
+            p &nbsp;
+            p &nbsp;
+            a.btn.btn-default(href='/') 转入首页
+            a.btn.btn-default(href='signin') 转入登录页
+            a.btn.btn-default(href='signup') 转入注册页
+          script(src="../js/error.js")

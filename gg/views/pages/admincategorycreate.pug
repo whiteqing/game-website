@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  section
+    .container
+      h3
+        span.glyphicon.glyphicon-tree-deciduous
+        | 分类录入
+  include ../includes/notification
+  section
+    .container
+      .row
+        form.form-horizontal(method="post", action="/admin/category/create")
+          if category._id
+            input(type="hidden", name="categoryId", value=category._id)
+          .form-group
+            label.col-sm-2.control-label(for="categoryname") 分类名称
+            .col-sm-10
+              input#categoryname.form-control(type="text", name="categoryName")
+          .form-group
+            .col-sm-offset-2.col-sm-5
+              button.btn.btn-primary(type="submit") 录入
+            .col-sm-5
+              a.btn.btn-warning(href="/admin/games") 返回

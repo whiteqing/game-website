@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+    ol.breadcrumb
+      li
+        a(href="/games") 全部游戏
+        - if (game.category) {
+      li
+        a(href='/search/games?category=' + game.category.name + '&p=0') #{game.category.name}
+        - }
+      li.active #{game.name}
+    .row
+      .col-md-7
+       img(src="/upload/" + game.poster, alt=game.name, style="width:720px; height:500px;")
+      .col-md-5
+        .dl-horizontal
+          dt 游戏名称
+          dd= game.name
+          dt 上线年份
+          dd= game.year
+          dt 游戏简介
+          dd= game.summary
+          dt 官方网站
+          dd
+            a(href=game.url, target="_blank") 点击进入

@@ -1,0 +1,53 @@
+extends ../layout
+
+block content
+  section.adminlist
+    .container
+      .row
+        .games-content-box
+          table.table.table-hover.table-bordered
+            thead
+              tr
+                th 游戏名字
+                th 查看详情
+                th 修改时间
+                th 修改
+                th 删除
+                th 分类
+            tbody
+              each game in games
+                tr(class="game-id-" + game._id)
+                  td #{game.name}
+                  td: a(target="_blank", href="/games/" + game._id) 查看
+                  td #{moment(game.meta.updateAt).format('YYYY-MM-DD, HH:mm:ss')}
+                  td: a(href="/admin/gameupdate/" + game._id) 修改
+                  td
+                    button.btn.btn-danger.del(type="button", data-id=game._id) 删除
+                  td #{game.category.name}
+        ul.pagination
+          li
+            - if (currentPage == 1) {
+                span &laquo;
+            - }else{
+                a(href='/admin/gamelist?p=' + (currentPage-2)) &laquo;
+            - }           
+          - for (var i = 0; i < totalPage; i++) {
+            - if (currentPage == (i + 1)) {
+                li.active
+                  span #{currentPage}
+            - }else {
+                li
+                  a(href='/admin/gamelist?p=' + i) #{i + 1}
+            - }
+          - }
+          li
+            - if (currentPage == totalPage) {
+                span &raquo;
+            - }else{
+                a(href='/admin/gamelist?p=' + (currentPage)) &raquo;
+            - } 
+        .goback-padding-bottom  
+          a.btn.btn-warning(href="/admin/games") 返回
+          a.btn.btn-warning(href="/admin/game/create") 录入
+  include ../includes/footer
+  script(src="../js/admingamelist.js")
