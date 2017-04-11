@@ -3,7 +3,7 @@
 #### 程序运行环境 
   1. 系统：windows10   
   2. 环境：node.js环境，MongoDB数据库   
-  3. 所用到的软件：webstrom编辑器，Robomongo数据库管理工具
+  3. 软件：webstrom，Robomongo
 
 #### 运行方式
 1. 运行数据库：   
